@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block page_title %}
+    <title>{{ settings.home_page_title }}</title>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid first_pic">
+        <div class="container cta_content_dvg" data-aos="fade-up">
+            <h1 class="cta_content_h">{{ settings.home_title_bold }}</h1>
+            <h1 class="cta_contennnt">{{ settings.home_title_plane|safe }}</h1>
+            <button onclick="location.href='{{ settings.home_title_button_url }}'" type="button"
+                    class="btn manif_btn">{{ settings.home_title_button_manifesto }}</button>
+        </div>
+    </div>
+    <div class="container reasons_why">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="reasons_why_text" data-aos="fade">
+                    <h4>{{ settings.home_we_garner|safe }}</h4>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-------------------- Our Focus-------------------->
+    <div class="container-fluid our_focus">
+        <div class="container">
+            <div class="pg_head_w">
+                <h1>{{ settings.home_our_focus }}</h1>
+            </div>
+            <div class="row">{% for focus in focus_models %}
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="face face1">
+                            <div class="content">
+                                <h3>{{ focus.title }}</h3>
+                            </div>
+                        </div>
+                        <div class="face face2">
+                            <div class="content">
+                                <p>{{ focus.content|safe }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-------------------- Partners slide -------------------->
+    <div class="container">
+        <div class="partners_slider">
+            <div class="pg_head_b">
+                <h1>{{ settings.home_partners }}</h1>
+            </div>
+            <section class="customer-logos slider">
+                {% for partner in partners_models %}
+                    <div class="slide">
+                        <a href="{{ partner.url }}" target="_blank"> <img src="{{ partner.image.url }}"></a>
+                    </div>
+                {% endfor %}
+            </section>
+        </div>
+    </div>
+{% endblock %}

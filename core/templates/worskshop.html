@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block page_title %}
+    <title>{{ settings.index_title_workshop }}</title>
+{% endblock %}
+{% block content %}
+<div class="container-fluid workshops_back">
+  <div class="container page_head">
+    <h1>{{ settings.index_title_workshop }}</h1>
+  </div>
+</div>
+
+<!---------------------- Workshops ---------------------->
+
+<div class="container-fluid workshops_edu_back">
+<div class="container">
+  <div class="row workshops_row">
+
+    <div class="col-md-12">
+        {% for work in workshop_models %}
+      <h3>{{ work.name }}</h3>
+      <p class="workshops_p">
+      <ul class="edu_list list-unstyled" >
+        <li><b class="edu_list_green">{{ work.title_bold }}&nbsp;</b>{{ work.title_plane }}</li>
+        <li><b class="edu_list_green">{{ work.title_main_bold }}&nbsp;</b>{{ work.title_main_plane }}</li>
+        <li><b class="edu_list_green">{{ work.content_bold }}&nbsp;</b>{{ work.content_plane }}</li>
+      </ul>
+      </p>
+        {% endfor %}
+      <hr>
+      <br>
+
+{#      <h3>Innovation awareness & corporate entrepreneurship</h3>#}
+{#      <p class="workshops_p">#}
+{#      <ul class="edu_list list-unstyled">#}
+{#        <li><b class="edu_list_green">What:</b> The sessions will train executives how to adapt to and adopt innovation in a fast-paced innovative environment. It will also look into the corporate entrepreneurship drivers and how they may be empowered by decision-makers</li>#}
+{#        <li><b class="edu_list_green">For whom:</b> This is a week's long training session for C-level executives and middle managers that are in a position of driving innovation and entrepreneurial initiatives within their organizations</li>#}
+{#        <li><b class="edu_list_green">By whom:</b> The session will be delivered by entrepreneurs, digital experts and practitioners as well as researchers from reputable international academic institutions</li>#}
+{#      </ul>#}
+{#      </p>#}
+    </div>
+  </div>
+</div>
+</div>
+
+{% endblock %}

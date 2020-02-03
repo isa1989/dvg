@@ -1,0 +1,1020 @@
+@font-face {
+  font-family: SofiaProRegular;
+  src: url("SofiaProRegular.otf");
+}
+
+@font-face {
+  font-family: MarkPro-Book;
+  src: url("MarkPro-Book.otf");
+}
+
+@font-face {
+  font-family: MarkPro-ExtraLight;
+  src: url("MarkPro-ExtraLight.otf");
+}
+
+@font-face {
+  font-family: MarkPro-Bold;
+  src: url("MarkPro-Bold.otf");
+}
+
+* {
+  font-family: MarkPro-ExtraLight;
+}
+
+html,
+body {
+  font-family: MarkPro-ExtraLight;
+  height: 100%;
+  width: 100%;
+  background-color: #F9F9F9;
+}
+
+
+/*BODY SCROLL*/
+
+html ::-webkit-scrollbar {
+  width: 9px;
+  min-height: 15px;
+}
+
+
+/* Track */
+
+html ::-webkit-scrollbar-track {
+  background: #DFDFDF;
+}
+
+
+/* Handle */
+
+html ::-webkit-scrollbar-thumb {
+  background: #7F7F7F;
+}
+
+
+/* Handle on hover */
+
+html ::-webkit-scrollbar-thumb:hover {
+  background: #424242;
+}
+
+
+/*BODY SCROLL*/
+
+@media screen and (max-width: 600px) {
+  img.main_logo {
+    width: 250px;
+  }
+}
+
+/**************************** Sidebar nav starts ****************************/
+.modal.right .modal-dialog {
+  position: fixed;
+  margin: auto;
+  width: 280px;
+  height: 100%;
+  -webkit-transform: translate3d(0%, 0, 0);
+  -ms-transform: translate3d(0%, 0, 0);
+  -o-transform: translate3d(0%, 0, 0);
+  transform: translate3d(0%, 0, 0);
+  }
+
+.modal.right .modal-content {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.modal.right .modal-body {
+  padding: 0;
+}
+        
+/*Right*/
+.modal.right.fade .modal-dialog {
+  right: -320px;
+  -webkit-transition: opacity 0.3s linear, right 0.3s ease-out;
+  -moz-transition: opacity 0.3s linear, right 0.3s ease-out;
+  -o-transition: opacity 0.3s linear, right 0.3s ease-out;
+  transition: opacity 0.3s linear, right 0.3s ease-out;
+}
+  
+.modal.right.fade.show .modal-dialog {
+  right: 0;
+}
+
+/* ----- MODAL STYLE ----- */
+.modal-content {
+  border-radius: 0;
+  border: none;
+  background-color: rgb(23, 29, 37 );
+  color: #FFF;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 10px, rgba(0, 0, 0, 0.23) 0px 3px 10px;
+}
+
+button.clos {
+  color: #0DE5B4;
+  background-color: transparent;
+  border:none;
+  box-shadow: none;
+  text-shadow: none;
+  opacity: 0.7;
+  margin: 0;
+  outline: none;
+  margin-left: auto;
+  transition: 0.2s;
+}
+
+button.clos:hover {
+  opacity: 1;
+  color:#0DE5B4;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+button.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.modal-header {
+  background-color: #151515;
+  padding: 20px 30px;
+  text-align: center;
+  border-bottom: 1px solid #282828;
+}
+
+.btn-sidebar {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  color: #FFF;
+  text-align: right;
+}
+
+#sidebar_body {
+  padding: 0;
+}
+
+#sidebar_body li {
+  padding: 0;
+  border-radius: 0;
+  background-color: rgb(23, 29, 37 );
+  transition: ease 0.3s;
+  border-left: 2px solid transparent;
+}
+
+#sidebar_body li:hover {
+  color: red;
+  border-radius: 0;
+  background-color: rgb(23, 29, 37 );
+  border-left: 2px solid #02C072;
+}
+
+#sidebar_body li>a {
+  color: #fff;
+  padding: 15px 20px;
+  transition: ease 0.3s;
+}
+
+#sidebar_body li>a:hover {
+  color: #02C072;
+}
+
+/**************************** Sidebar nav ends ****************************/
+
+/****************************NAVBAR starts****************************/
+
+#navbar_dvg {
+  transition: background-color 0.15s linear;
+}
+
+.custom-toggler.navbar-toggler {
+  border: none;
+  outline: none;
+}
+
+.navbar-nav>li {
+  padding: 0 9px;
+  margin: 0;
+  border-bottom: 2px solid transparent;
+  transition: 0.2s ease;
+}
+
+.navbar-nav>li:hover,
+.navbar-nav>li:active {
+  border-bottom: 2px solid #02C072;
+}
+
+.navbar-nav>li>a {
+  font-size: 16px;
+  color: #fff;
+  padding: 22px 20px;
+  transition: 0.2s ease;
+}
+
+.navbar-nav>li>a:hover {
+  color: #02C072;
+}
+
+.navbar {
+  padding: 0 0 0 12px;
+}
+
+.dropdown:hover>.dropdown-menu {
+  margin-top: 1px;
+  display: block;
+  background-color: rgba(19, 19, 19, 0.8);
+  color: #02C072;
+  border-radius: 0;
+}
+
+.dropdown>.dropdown-menu a {
+  color: #fff;
+  transition: 0.3s;
+}
+
+.dropdown>.dropdown-menu a:hover {
+  color: #02C072;
+  background-color: rgba(19, 19, 19, 0.8);
+}
+
+.dropdown>.dropdown-toggle:active {
+  pointer-events: none;
+}
+
+
+/*******************************NAVBAR ends*******************************/
+
+
+/*******************************Index page starts*******************************/
+
+.first_pic {
+  background: linear-gradient(-90deg, rgba(59, 59, 59, 0.09), rgba(9, 9, 9, 0.99)), url("../img/index_img.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  position: relative;
+}
+
+.cta_content_dvg {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding-bottom: 45px;
+}
+
+.cta_contennnt {
+  font-family: MarkPro-ExtraLight;
+  color: #E7E7E7;
+  padding-bottom: 25px;
+  max-width: 70%;
+  font-size: 21px;
+  line-height: 1.3;
+}
+
+.cta_contennnt h1 {
+  font-family: MarkPro-ExtraLight;
+}
+
+@media screen and (max-width: 600px) {
+  .cta_contennnt {
+    font-size: 14px;
+    max-width: 90%;
+  }
+}
+
+.cta_content_h {
+  font-family: 'MarkPro-Bold';
+  font-weight: bold;
+  font-size: 45px;
+  color: #fff;
+  padding-bottom: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .cta_content_h {
+    font-size: 30px;
+  }
+}
+
+.manif_btn {
+  background-color: Transparent;
+  border: 2px solid #02C072;
+  color: #fff;
+  padding: 10px 55px;
+  text-align: center;
+  font-size: 19px;
+  transition: 0.2s;
+  border-radius: 30px;
+  outline: none;
+  font-weight: bold;
+}
+
+.manif_btn:hover {
+  background-color: #02C072;
+  color: #fff;
+  border: 2px solid #02C072;
+  outline: none;
+  box-shadow: 0 3px 19px -5px rgba(0, 0, 0, 0.7);
+}
+
+.manif_btn:focus {
+  box-shadow: none;
+}
+
+.reasons_why {
+  margin-top: 100px;
+  margin-bottom: 150px;
+}
+
+.reasons_why_text {
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: -1px;
+}
+
+.reasons_why_text h4 {
+  font-size: 25px;
+  text-align: center;
+}
+
+.pg_head_w h1 {
+  font-family: 'MarkPro-Book';
+  color: #fff;
+  font-size: 39px;
+  text-align: left;
+  padding-top: 25px;
+}
+
+.pg_head_w h1::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  margin-top: 9px;
+  background: #02C072;
+  left: calc(50% - 0);
+}
+
+.pg_head_b h1 {
+  font-family: 'MarkPro-Book';
+  color: #02C072;
+  font-size: 39px;
+  text-align: left;
+  padding-top: 25px;
+}
+
+.pg_head_b h1::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  margin-top: 9px;
+  background: #02C072;
+  left: calc(50% - 0);
+}
+
+.card {
+  background-color: transparent;
+  position: relative;
+  border: none;
+  align-items: center;
+  border-radius: 9px;
+  margin: 20px 0 0 0;
+}
+
+.card .face {
+  margin-bottom: -5px;
+  width: 300px;
+  height: 200px;
+  transition: 0.5s;
+}
+
+.card .face.face1 {
+  position: relative;
+  background: #343937;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  transform: translateY(100px);
+  color: #fff;
+}
+
+.card:hover .face.face1 {
+  background-color: #02C072;
+  transform: translateY(0);
+  box-shadow: 0 12px 20px -5px rgba(2, 192, 114, 0.7);
+  cursor: pointer;
+  border-radius: 12px 12px 0 0;
+}
+
+.card .face.face1 .content {
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.card:hover .face.face1 .content {
+  opacity: 1;
+}
+
+.card .face.face1 .content h3 {
+  margin: 10px 0 0;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.card .face.face2 {
+  border-top: 5px solid #02C072;
+  position: relative;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5px;
+  box-sizing: border-box;
+  box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.3);
+  transform: translateY(-100px);
+  border-radius: 0 0 12px 12px;
+}
+
+.card:hover .face.face2 {
+  transform: translateY(0);
+}
+
+.card .face.face2 .content p {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.our_focus {
+  background-color: #2d3436;
+  background: url("../img/manifesto/mani_back.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  padding: 70px 0;
+  margin-bottom: 30px;
+  position: relative;
+  margin: 90px 0;
+}
+
+
+/*******************************Index page ends*******************************/
+
+
+/******************************* What we do page starts*******************************/
+
+.whatwedo_back {
+  background: linear-gradient(rgba(19, 19, 19, 0.05), rgba(19, 19, 19, 0.95)), url("../img/we.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 370px;
+  width: 100%;
+  padding: 120px 0;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.page_head h1 {
+  font-family: 'MarkPro-Book';
+  font-size: 25px;
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 10px;
+  font-weight: normal;
+}
+
+.whatwedo_row {
+  margin-bottom: 75px;
+  margin-top: 75px;
+  padding: 0;
+}
+
+.whatwedo_row h3 {
+  font-family: 'MarkPro-Book';
+  color: #262f3c;
+  font-size: 25px;
+  padding-top: 0;
+  padding-bottom: 5px;
+  font-weight: bold;
+}
+
+.whatwedo_row .col-md-4 {
+  padding: 0;
+}
+
+.cons_p_main {
+  padding: 0 0 0 9px;
+  border-left: 5px solid #02C072;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 19px;
+  color: #757C86;
+}
+
+.cons_p {
+  font-size: 19px;
+  color: #757C86;
+  line-height: 1.2;
+}
+
+.cases {
+  margin: 60px auto 120px;
+}
+
+.case_row {
+  margin-bottom: 15px;
+  margin-top: 15px;
+  padding-top: 25px;
+}
+
+.case_row h1 {
+  font-family: 'MarkPro-Book';
+  color: #262f3c;
+  font-size: 25px;
+  padding-top: 0;
+  font-weight: bold;
+  padding-bottom: 15px;
+}
+
+.need_idea {
+  font-size: 20px;
+  color: #757C86;
+  line-height: 1.2;
+}
+
+
+/*******************************What we do page ends*******************************/
+
+
+/*******************************Manifesto page starts*******************************/
+
+.manif_back {
+  background: linear-gradient(rgba(19, 19, 19, 0.55), rgba(19, 19, 19, 0.95)), url("../img/manifesto/manif_main.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 370px;
+  width: 100%;
+  padding: 120px 0;
+  position: relative;
+}
+
+.manif {
+  background: url("../img/manifesto/mani_back.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  padding: 70px 0;
+  position: relative;
+  margin-bottom: 0;
+}
+
+.manif .manifspan2 {
+  font-family: 'MarkPro-Book';
+  color: #02C072;
+  font-size: 25px;
+}
+
+.manif .manifspan1 {
+  font-family: 'MarkPro-Bold';
+  display: inline-block;
+  color: #4E525B;
+  font-size: 29px;
+  padding-bottom: 1px;
+}
+
+.manif li {
+  background: linear-gradient(180deg, #242a32, #262d35);
+  color: #bec2c8;
+  border-radius: 5px;
+  font-size: 17px;
+  font-weight: normal;
+  padding: 35px 25px;
+  transition: ease 0.2s;
+  margin-bottom: 35px;
+  box-shadow: 0 12px 22px -19px rgba(0, 0, 0, 0.7);
+}
+
+
+/*******************************Manifesto page ends*******************************/
+
+
+/******************************* Workshops page starts*******************************/
+
+.workshops_back {
+  background: -webkit-linear-gradient(rgba(19, 19, 19, 0.05), rgba(19, 19, 19, 0.95)), url("../img/training/training_main.jpg");
+  background: -o-linear-gradient(rgba(19, 19, 19, 0.05), rgba(19, 19, 19, 0.95)), url("../img/training/training_main.jpg");
+  background: linear-gradient(rgba(19, 19, 19, 0.35), rgba(19, 19, 19, 0.95)), url("../img/training/training_main.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 370px;
+  width: 100%;
+  padding: 120px 0;
+  position: relative;
+}
+
+.workshops_row {
+  margin-bottom: 75px;
+  margin-top: 15px;
+  padding: 0;
+}
+
+.workshops_edu_back {
+  background: url("../img/manifesto/mani_back.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  padding: 70px 0;
+  position: relative;
+  margin-bottom: 0;
+}
+
+.workshops_row h3 {
+  font-family: 'MarkPro-Book';
+  color: #fff;
+  font-weight: 900;
+  font-size: 25px;
+  padding-top: 0;
+  padding-bottom: 5px;
+}
+
+.workshops_row .col-md-4 {
+  padding: 0;
+}
+
+.workshops_row li {
+  color: #B4C1CB;
+}
+
+.workshops_p {
+  font-size: 21px;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.edu_list {
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.edu_list_green {
+  font-family: 'MarkPro-Bold';
+  color: #02C072;
+}
+
+.edu_list li {
+  transition: ease 300ms;
+  padding-bottom: 19px;
+}
+
+
+/*******************************Workshops page ends*******************************/
+
+
+/*******************************Join us page starts*******************************/
+
+.joinus_back {
+  background: linear-gradient(rgba(19, 19, 19, 0.05), rgba(19, 19, 19, 0.95)), url("../img/joinus/joinus2.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 370px;
+  width: 100%;
+  padding: 120px 0;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.joinus {
+  margin-bottom: 100px;
+}
+
+.joinus p {
+  padding-top: 25px;
+  font-size: 17px;
+  line-height: 1.1;
+  font-weight: bold;
+}
+
+
+/*******************************Join us page ends*******************************/
+
+
+/******************Footer starts**********************/
+
+footer {
+  background-color: #222;
+  color: white;
+  margin-top: 0;
+}
+
+footer a {
+  color: #999;
+  transition-duration: 0.2s;
+}
+
+.footer-pad,
+.footer-pad-social {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.footer-pad li>a:hover {
+  color: #02C072;
+  text-decoration: none;
+  padding-left: 5px;
+}
+
+.footer-pad li {
+  padding: 5px 0;
+  border-bottom: 1px solid #424242;
+}
+
+footer h4 {
+  color: #02C072;
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+.footer-pad p {
+  color: #999;
+}
+
+.footer-pad-social_1 li {
+  padding: 5px 0;
+}
+
+.footer-pad-social_1 i {
+  padding-right: 8px;
+}
+
+.footer-pad-social li {
+  padding-bottom: 5px;
+}
+
+.copy {
+  font-size: 14px;
+  padding: 10px;
+  border-top: 1px solid #797979;
+}
+
+.footer-middle {
+  padding-top: 2em;
+  color: #999;
+}
+
+
+/* footer social icons */
+
+.sidebar_social {
+  text-align: center;
+  margin: 0 auto;
+}
+
+ul.social-network {
+  list-style: none;
+  display: inline;
+  margin-left: 0 !important;
+  padding: 0;
+}
+
+ul.social-network li {
+  display: inline;
+  margin: 0 1px;
+}
+
+.social-network a.icoFacebook:hover {
+  background-color: #3B5998;
+}
+
+.social-network a.icoLinkedin:hover {
+  background-color: #007bb7;
+}
+
+.social-network a.icoTwitter:hover {
+  background-color: #55ACEE;
+}
+
+.social-network a.icoInstagram:hover {
+  background-color: #E1306C;
+}
+
+.social-network a.icoGoogle:hover {
+  background-color: #dd4b39;
+}
+
+.social-network a.icoFacebook:hover i,
+.social-network a.icoLinkedin:hover i,
+.social-network a.icoInstagram:hover i,
+.social-network a.icoGoogle:hover i,
+.social-network a.icoTwitter:hover i {
+  color: #fff;
+}
+
+.social-network a.socialIcon:hover,
+.socialHoverClass {
+  color: #44BCDD;
+}
+
+.social-circle li a {
+  display: inline-block;
+  position: relative;
+  margin: 0 auto 0 auto;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  font-size: 15px;
+}
+
+.social-circle li i {
+  margin: 0;
+  line-height: 30px;
+  text-align: center;
+}
+
+.social-circle i {
+  color: #929292;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+
+/* footer social icons */
+
+
+/******************Footer ends**********************/
+
+
+/*****************Scroll go top codes**********************/
+
+.go-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  text-decoration: none;
+  color: white;
+  background-color: rgba(2, 192, 114, 1);
+  font-size: 14px;
+  padding: 18px;
+  display: none;
+  border-radius: 30px;
+  line-height: 0;
+  text-align: center;
+}
+
+.go-top i {
+  color: #fff;
+}
+
+.go-top:hover {
+  background-color: rgba(2, 227, 135, 1);
+  transform: scale(1.1);
+}
+
+
+/*****************Scroll codes**********************/
+
+
+/*********index Partners slider starts*********/
+
+.partners_slider {
+  margin: 130px 0;
+}
+
+.slide {
+  margin: 15px 20px;
+}
+
+.slide img {
+  width: 85%;
+}
+
+.slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.slick-list:focus {
+  outline: none;
+}
+
+.slick-list.dragging {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+}
+
+.slick-track:before,
+.slick-track:after {
+  display: table;
+  content: '';
+}
+
+.slick-track:after {
+  clear: both;
+}
+
+.slick-loading .slick-track {
+  visibility: hidden;
+}
+
+.slick-slide {
+  display: none;
+  float: left;
+  height: 100%;
+  min-height: 1px;
+}
+
+[dir='rtl'] .slick-slide {
+  float: right;
+}
+
+.slick-slide img {
+  display: block;
+}
+
+.slick-slide.slick-loading img {
+  display: none;
+}
+
+.slick-slide.dragging img {
+  pointer-events: none;
+}
+
+.slick-initialized .slick-slide {
+  display: block;
+}
+
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
+}
+
+.slick-arrow.slick-hidden {
+  display: none;
+}
+
+
+/*İNDEX PAGE LOGO SLİDER ENDS*/

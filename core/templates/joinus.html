@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block page_title %}
+    <title>{{ settings.joinus_title }}</title>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid joinus_back">
+  <div class="container page_head">
+    <h1>{{ settings.joinus_title }}</h1>
+  </div>
+</div>
+
+
+<div class="container joinus">
+  <div class="row ">
+    <div class="col-md-12">
+         {% for joinus in joinus_models %}
+        {{ joinus.title_bold|safe }}
+        {% endfor %}
+    </div>
+  </div>
+  </div>
+
+{% endblock %}

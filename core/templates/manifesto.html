@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block page_title %}
+    <title>{{ settings.index_title_manifesto }}</title>
+{% endblock %}
+{% block content %}
+    <div class="container-fluid manif_back">
+
+        <div class="container page_head">
+            <h1>Manifesto</h1>
+        </div>
+    </div>
+
+
+    <div class="container-fluid manif">
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-12">
+                    <ul class="list-unstyled">
+
+                        {#        <li> <span class="manifspan2">  Innovation</span> <br>We embrace untapped and unknown to open up new perspectives in digital and innovative solutions.</li>#}
+                        {% for manifesto in manifesto_models %}
+                            <li data-aos="fade"><span
+                                    class="manifspan2">{{ manifesto.title_bold }}</span><br>{{ manifesto.title_plane }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

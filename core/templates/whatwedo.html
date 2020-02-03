@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block page_title %}
+    <title>{{ settings.index_title }}</title>
+{% endblock %}
+{% block content %}
+
+<div class="container-fluid whatwedo_back">
+  <div class="container page_head">
+    <h1>{{ settings.index_title }}</h1>
+  </div>
+</div>
+
+<!-------------------------- What we do -------------------------->
+<div class="container">
+  <div class="row whatwedo_row">
+    <div class="col-md-11">
+        {% for what in whatwedo_models %}
+      <h3>{{ what.title }}</h3>
+      <p class="cons_p_main">{{ what.title_main }}</p>
+      <p class="cons_p">{{ what.content }}</p>
+      <hr>
+      <br>
+        {% endfor %}
+    </div>
+  </div>
+</div>
+
+<!------------------------------- Cases ------------------------------->
+<div class="container cases">
+  <div class="pg_head_b">
+    <h1>{{ settings.cases_title }}</h1>
+  </div>
+  <!----------------------------- CASES: BANKING --------------------------->
+  <div class="row case_row" data-aos="fade-up">
+    <div class="col-md-4" >
+      <img class="case_row_img" src="img/cases/banking.jpg" alt="" width="100%" class="img-responsive">
+    </div>
+    <div class="col-md-8 cases_solution" >
+      <h1>{{ settings.cases_banking }}</h1>
+      <p class="need_idea"> <b style="color: #02C072;">{{ settings.cases_bold_title_banking }}</b> {{ settings.cases_plane_title_banking }}</p>
+      <p class="need_idea"><b style="color: #02C072;">{{ settings.cases_bold_content_banking }}</b> {{ settings.cases_plane_content_banking }}</p>
+    </div>
+  </div>
+  <hr>
+  <!----------------------------- CASES: Insurance --------------------------->
+  <div class="row case_row" data-aos="fade-up">
+    <div class="col-md-8 cases_solution" >
+      <h1>{{ settings.cases_insurance }}</h1>
+      <p class="need_idea"> <b style="color: #02C072;">{{ settings.cases_bold_title_insurance }}</b> {{ settings.cases_plane_title_insurance }}</p>
+      <p class="need_idea"><b style="color: #02C072;">{{ settings.cases_bold_content_insurance }}</b> {{ settings.cases_plane_content_insurance }}</p>
+    </div>
+    <div class="col-md-4" >
+      <img class="case_row_img" src="img/cases/ins.jpg" alt="" width="100%" class="img-responsive">
+    </div>
+  </div>
+  <hr>
+  <!----------------------------- CASES: Telecom --------------------------->
+  <div class="row case_row" data-aos="fade-up">
+    <div class="col-md-4" >
+      <img class="case_row_img" src="img/cases/tele.jpg" alt="" width="100%" class="img-responsive">
+    </div>
+    <div class="col-md-8 cases_solution" >
+      <h1>{{ settings.cases_telecom }}</h1>
+      <p class="need_idea"> <b style="color: #02C072;">{{ settings.cases_bold_title_telecom }}</b> {{ settings.cases_plane_title_telecom }}</p>
+      <p class="need_idea"><b style="color: #02C072;">{{ settings.cases_bold_content_telecom }}</b> {{ settings.cases_plane_content_telecom }}</p>
+    </div>
+  </div>
+  <hr>
+  <!----------------------------- CASES: Startup --------------------------->
+  <div class="row case_row" data-aos="fade-up">
+    <div class="col-md-8 cases_solution" >
+      <h1>{{ settings.cases_startup }}</h1>
+      <p class="need_idea"><b style="color: #02C072;">{{ settings.cases_bold_title_startup }}</b> {{ settings.cases_plane_title_startup }}</p>
+      <p class="need_idea"><b style="color: #02C072;">{{ settings.cases_bold_content_startup }}</b> {{ settings.cases_plane_content_startup }}</p>
+    </div>
+    <div class="col-md-4" >
+      <img class="case_row_img" src="img/cases/startup.jpg" alt="" width="100%" class="img-responsive">
+    </div>
+  </div>
+</div>
+{% endblock %}

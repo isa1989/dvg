@@ -1,0 +1,227 @@
+{% load static base_filter i18n %}
+{% get_settings as settings %}
+<!DOCTYPE html>
+<html lang="en">
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+<html class="no-js" lang="{{ LANGUAGE_CODE|default:"en" }}">
+<head>
+{#    {% get_settings as settings %}#}
+{#    <title>{{ settings.home_title_bold }}</title>#}
+    {% block page_title %} {% endblock %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+    <script src="https://use.fontawesome.com/7d504a63b6.js"></script>
+    <link href="{% static 'css/main_style.css' %}" rel="stylesheet">
+    <script type="text/javascript" {% static 'js/main.js' %}></script>
+    <link rel="icon" type="img/png" href="{{ settings.logo_header.url }}">
+</head>
+<body>
+<div class="container ">
+    <div class="first_pic_content ">
+        <nav class="navbar fixed-top navbar-expand-lg" id="navbar_dvg">
+            <div class="container ">
+                <a class="navbar-brand" href="{{ settings.logo_home_url }}"><img src="{{ settings.logo_home.url }}"
+                                                      class="main_logo_dvg img-responsive" width="59"></a>
+                <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ml-auto">
+                        {% get_menus as menus %}
+                        {% for menu in menus %}
+                            <li class="nav-item active ml-auto">
+                                <a class="nav-link" href="{{ request.scheme }}://{{ request.META.HTTP_HOST }}/{{ LANGUAGE_CODE }}{{ menu.url }}">{{ menu.name }}</a>
+                            </li>
+
+                        {% endfor %}
+                    </ul>
+                </div>
+                <button type="button" class="btn btn-sidebar" data-toggle="modal" data-target="#myModal2">
+                    <i class="fas fa-align-right fa-lg"></i>
+                </button>
+                <div class="navbar__language-wrapper">
+{#                    <button class="navbar__current-language">#}
+{#                        <span class="mr-2">{{ LANGUAGE_CODE|upper }}</span>#}
+{#                        <i class="fa fa-angle-down" aria-hidden="true"></i>#}
+{#                    </button>#}
+                    <button class="navbar__language-list">
+                        {% for lang in LANGUAGES %}
+                            <li {% if lang.0 == LANGUAGE_CODE %}class="active"{% endif %} data-lang="{{ lang.0 }}">
+                                <a href="/{{ lang.0 }}/{{ request.get_full_path|slice:'4:' }}">{{ lang.0|upper }}</a>
+                            </li>
+                        {% endfor %}
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+<div class="container demo">
+    <!-- Modal -->
+    <div class="modal right fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title ml-0" id="myModalLabel2">DVG</h5>
+                    <button type="button" class="clos mr-0" data-dismiss="modal" aria-label="Close"><i
+                            class="fas fa-times fa-sm close_i"></i></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container" id="sidebar_body">
+                        <ul class="list-group">
+                            {% get_modal_menus as menus %}
+                            {% for menu in menus %}
+                                <li class="list-group-item">
+                                    <a class="nav-link" href="{{ request.scheme }}://{{ request.META.HTTP_HOST }}/{{ LANGUAGE_CODE }}{{ menu.url }}">{{ menu.name }}</a>
+                                </li>
+                                {#                  <li class="list-group-item">#}
+                                {#                    <a class="nav-link" href="whatwedo.php">What we do</a>#}
+                                {#                  </li>#}
+                                {#                  <li class="list-group-item">#}
+                                {#                    <a class="nav-link" href="manifesto.php">Manifesto</a>#}
+                                {#                  </li>#}
+                                {#                  <li class="list-group-item">#}
+                                {#                    <a class="nav-link" href="workshops.php">Workshops</a>#}
+                                {#                  </li>#}
+                                {#                  <li class="list-group-item">#}
+                                {#                    <a class="nav-link" href="manifesto.php">DVG insights</a>#}
+                                {#                  </li>#}
+                                {#                  <li class="list-group-item">#}
+                                {#                    <a class="nav-link" href="joinus.php">Join us</a>#}
+                                {#                  </li>#}
+                            {% endfor %}
+                        </ul>
+                        <hr style="background-color: #313439;">
+                    </div>
+                    <div class="sidebar_social">
+                        <ul class="social-network social-circle">
+                            <li><a href="{{ settings.facebook }}" class="icoFacebook" title="Facebook"><i
+                                    class="fa fa-facebook"></i></a></li>
+                            <li><a href="{{ settings.linkedin }}" class="icoLinkedin" title="Linkedin"><i
+                                    class="fa fa-linkedin"></i></a></li>
+                            <li><a href="{{ settings.instagram }}" class="icoInstagram" title="Instagram"><i
+                                    class="fab fa-instagram"></i></a>
+                            </li>
+                            <li><a href="{{ settings.twitter }}" class="icoTwitter" title="Twitter"><i
+                                    class="fab fa-twitter"></i></a></li>
+                            <li><a href="{{ settings.mail }}" class="icoGoogle" title="Google"><i
+                                    class="fab fa-google-plus-g"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- modal-content -->
+        </div>
+        <!-- modal-dialog -->
+    </div>
+    <!-- modal -->
+</div>
+<!-- container -->
+{% block content %}
+
+
+{% endblock %}
+<footer class="mainfooter" role="contentinfo">
+    <div class="footer-middle">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <!--Column1-->
+                    <div class="footer-pad">
+                        {#                        <h4>{{ settings.footer_title }}</h4>#}
+                        <a class="navbar-brand" href="{{ settings.logo_footer_url }}"><img src="{{ settings.logo_footer.url }}"
+                                                              class="main_logo_dvg img-responsive" width="99"></a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <!--Column2-->
+                    <div class="footer-pad">
+                        <h4>Quick links</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="{{ settings.footer_home_url }}">{{ settings.footer_home_link }}</a></li>
+                            <li><a href="{{ settings.footer_whatwedo_url }}">{{ settings.footer_whatwedo_link }}</a>
+                            </li>
+                            <li><a href="{{ settings.footer_manifesto_url }}">{{ settings.footer_manifesto_link }}</a>
+                            </li>
+                            <li><a href="{{ settings.footer_joinus_url }}">{{ settings.footer_joinus_link }}</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="footer-pad-social">
+                        <h4>{{ settings.footer_contact_us }}</h4>
+                        <ul class="list-unstyled footer-pad-social_1">
+                            <li><i class="fas fa-map-marker-alt"></i>{{ settings.footer_contact_us_adress }}</li>
+                            <li><i class="fas fa-phone-alt"></i>{{ settings.footer_tel_text }}</li>
+                            <li><i class="fas fa-envelope-open"></i>{{ settings.footer_email }}</li>
+                        </ul>
+                        <ul class="social-network social-circle">
+                            {% if settings.facebook_target %}
+                                <li><a href="{{ settings.facebook }}" class="icoFacebook" title="Facebook"><i
+                                        class="fa fa-facebook"></i></a></li>
+                            {% endif %}
+                            {% if settings.linkedin_target %}
+                                <li><a href="{{ settings.linkedin }}" class="icoLinkedin" title="Linkedin"><i
+                                        class="fa fa-linkedin"></i></a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 copy">
+                    <p class="text-center">{{ settings.copyright }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="go-top"><i class="fas fa-chevron-up"></i></a>
+    <script>
+        $(window).scroll(function () {
+            if ($(window).scrollTop() >= 50) {
+                $('#navbar_dvg').css('background', 'rgba(0, 0, 0 , 0.80)');
+            } else {
+                $('#navbar_dvg').css('background', 'transparent');
+            }
+        });
+
+
+        $(document).ready(function () {
+            // Show or hide the sticky footer button
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 200) {
+                    $('.go-top').fadeIn(200);
+                } else {
+                    $('.go-top').fadeOut(200);
+                }
+            });
+
+            // Animate the scroll to top
+            $('.go-top').click(function (event) {
+                event.preventDefault();
+
+                $('html, body').animate({scrollTop: 0}, 300);
+            })
+        });
+
+
+        AOS.init({
+            duration: 1200,
+        });
+
+    </script>
+</footer>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static base_filter  %}
+{% block page_title %}
+    <title>{{ settings.not_found_title }}</title>
+{% endblock %}
+{% block content %}
+    <!DOCTYPE html>
+    <html lang="en">
+      <body>
+    <div class="container-fluid">
+        <div id="notfound">
+            <div class="notfound">
+                <div class="notfound-404">
+                    <h1>{{ settings.not_found_opps }}</h1>
+                </div>
+                <h2>{{ settings.not_found_name }}</h2>
+                <p>{{ settings.not_found_content }}</p>
+                <a href="{{ settings.not_found_path }}">{{ settings.not_found_url }}</a>
+            </div>
+        </div>
+    </div>
+    </body>
+    </html>
+{% endblock %}
